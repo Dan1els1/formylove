@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel & Tatiane - 3 Anos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fefefe;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(120deg, #a2d4ec, #82c0cc);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      color: #3a6f7d;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+    .destino {
+      background: #e0f7fa;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .destino h3 {
+      font-size: 1.8rem;
+      color: #00796b;
+    }
+    .destino p {
+      font-size: 1.1rem;
+    }
+    .contador {
+      background: #fff3e0;
+      color: #ef6c00;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 1.4rem;
+      margin-top: 40px;
+      border-radius: 15px;
+    }
+    footer {
+      background: #3a6f7d;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio embutido.
+  </audio>
+
+  <header>
+    <h1>3 anos com você, Tatiane…</h1>
+    <p>E isso é só o começo.</p>
+  </header>
+
+  <section>
+    <h2>Nossa história</h2>
+    <p>Em cada momento vivido ao seu lado, tive ainda mais certeza de que você é a mulher da minha vida. Foram risadas, aprendizados, carinho… e muito amor.</p>
+    <div class="gallery">
+      <img src="https://files.oaiusercontent.com/file-bS1qqUZ3t2Uo9Uts0YKo8VoM" alt="Casal 1">
+      <img src="https://files.oaiusercontent.com/file-n4EzXezU8N7rfRxhI9T9wT5Z" alt="Casal 2">
+      <img src="https://files.oaiusercontent.com/file-79mkwIR1zX8TfpJQdUgIVQ4e" alt="Casal 3">
+      <img src="https://files.oaiusercontent.com/file-f70sU52bwcoTphHgfVZ7CZMQ" alt="Casal 4">
+      <img src="https://files.oaiusercontent.com/file-1BoB4DMSRbMSx3kRwbkxg2Yt" alt="Casal 5">
+    </div>
+  </section>
+
+  <section>
+    <h2>Um presente especial</h2>
+    <p>Para celebrar nossos 3 anos de namoro, eu queria algo que representasse o nosso amor. Algo que fosse além de palavras. E é por isso que preparei uma surpresa pra gente…</p>
+  </section>
+
+  <section class="destino">
+    <h3>🌴 Nossa Lua de Mel já está marcada!</h3>
+    <p>Em 26 de setembro, depois do nosso "sim", vamos viver dias mágicos em…</p>
+    <h3>✨ Maragogi ✨</h3>
+    <p>Prepare-se para praias incríveis, águas cristalinas e momentos que vamos guardar pra sempre.</p>
+  </section>
+
+  <section class="contador">
+    Faltam <span id="countdown"></span> para nossa viagem! 💑✈️
+  </section>
+
+  <footer>
+    <p>Te amo, Tatiane. Esse é só o começo do nosso para sempre. ❤️<br>– Daniel</p>
+  </footer>
+
+  <script>
+    const destino = new Date("2025-09-26T00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = destino - now;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${dias} dias, ${horas}h, ${minutos}min, ${segundos}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
